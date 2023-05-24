@@ -13,11 +13,10 @@ import java.util.TreeMap;
 public class Utils {
 	
 	//Nos creamos un mapa para guardar los contactos.
-	private static Map<String, Long> agenda= new TreeMap <String, Long>();
+	private static Map<String, String> agenda= new TreeMap <String, String>();
 	
 	//Nos creamos un archivo y su ruta correspondiente.
-	private static File fichero= new File ("Agenda.txt");
-	private static final String RUTA= ("/Users/isabelkatharinaloerzer/git/Tema10_B2b/Tema10_B2/src/Ficheros/Agenda.txt");
+	private static final String RUTA= ("src\\Ficheros\\Agenda.txt");
 	
 	/**
 	 * Función que carga el fichero en el mapa.
@@ -29,7 +28,7 @@ public class Utils {
 		String linea;
 		String[] datos;
 		String nombre;
-		long tlf;
+		String tlf;
 		
 		//Asignamos el búfer a un fichero.
 		
@@ -42,18 +41,16 @@ public class Utils {
 			
 			while (linea!=null&&!linea.equals("")) {
 				
-				datos=linea.split("; ");
+				datos=linea.split(";");
 				
 				nombre= datos[0];
-				tlf= Long.parseLong(datos[1]);
+				tlf= datos[1];
 				
 				agenda.put(nombre, tlf);
 				
-				//Pasamos de línea.
-				br.readLine();
+				//Leemos la siguiente línea.
+				linea= br.readLine();
 			}
-			
-			System.out.println(agenda);
 			
 		} catch (FileNotFoundException e) {
 			
@@ -103,7 +100,7 @@ public class Utils {
 	 * @throws SizeException lanza la excepción cuando se quieren introducir más contactos de los que se pueden.
 	 * @throws SameNameException lanza la excepción cuando el nombre de un contacto es igual a un nombre que ya existe en la agenda
 	 */
-	public static void nuevoContacto (String nombre, long tlf) throws SizeException, SameNameException {
+	public static void nuevoContacto (String nombre, String tlf) throws SizeException, SameNameException {
 		
 		//En caso de que la agenda ya tenga 20 registros, lanzamos una excepción de tamaño.
 		if (agenda.size()>20) {
@@ -129,7 +126,7 @@ public class Utils {
 	 */
 	public static void buscarContacto(String nombre) {
 		
-		long tlf;
+		String tlf;
 		
 		if (agenda.containsKey(nombre)) {
 
@@ -151,7 +148,7 @@ public class Utils {
 		//Recorremos agenda con un for-each y la imprimimos.
 		for (String contacto: agenda.keySet()) {
 			
-			System.out.println("Contacto: "+contacto+"; "+agenda.get(contacto));
+			System.out.println("Contacto: "+contacto+"; tlf: "+agenda.get(contacto));
 		}
 	}
 	
@@ -163,12 +160,12 @@ public class Utils {
 		//Abrimos el fichero con el búfer de escritura.
 		try {
 			
-			bw= new BufferedWriter (new FileWriter(RUTA, true));
+			bw= new BufferedWriter (new FileWriter(RUTA));
 			
 			//Recorremos la agenda y vamos guardando línea a línea.
 			for (String contacto: agenda.keySet()) {
 				
-				bw.write("Contacto: "+contacto+"; tlf: "+agenda.get(contacto));
+				bw.write(contacto+"; "+agenda.get(contacto));
 				
 				//Pasamos de línea.
 				bw.newLine();

@@ -13,7 +13,7 @@ public class Ejercicio08 {
 	
 	 //Creamos el fichero y guardamos su ruta.
 	private static File fichero= new File ("Temperatura.txt");
-	private static final String RUTA= ("/Users/isabelkatharinaloerzer/git/Tema10_B2b/Tema10_B2/src/Ficheros/Temperatura.txt");
+	private static final String RUTA= ("src\\Ficheros\\Temperatura.txt");
 	
 	//Creamos un escáner y los búferes necesarios.
 	static Scanner sc= new Scanner (System.in);

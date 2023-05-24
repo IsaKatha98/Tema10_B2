@@ -12,7 +12,7 @@ public class Ejercicio07 {
 		//Creamos las variables necesarias.
 		int opcion;
 		String nombre;
-		long tlf;
+		String tlf;
 		String respuesta;
 		
 		//Llamamos a la función abrirFichero.
@@ -40,7 +40,7 @@ public class Ejercicio07 {
 				System.out.println("Introduzca su nombre: ");
 				nombre=sc.nextLine();
 				System.out.println("Introduzca su teléfono: ");
-				tlf=sc.nextLong();
+				tlf=sc.nextLine();
 				
 				// Función que añade un contacto nuevo.
 				try {
@@ -57,6 +57,8 @@ public class Ejercicio07 {
 					System.out.println(e.getMessage());
 					
 				}	
+				
+				System.out.println("Se ha añadido un contacto.");
 				
 			}
 
