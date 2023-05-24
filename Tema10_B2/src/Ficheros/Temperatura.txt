@@ -1,0 +1,6 @@
+Fecha, TemperaturaMínima, TemperaturaMáxima
+2023-05-24, 15, 24
+2023-05-21, 13.0, 21.0
+2023-05-21, -4.0, 12.0
+Contacto: isa; tlf: 689513266
+Contacto: isa; tlf: 689513266
