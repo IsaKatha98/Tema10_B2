@@ -15,9 +15,6 @@ public class ejercicio05 {
 		// Creamos un BufferedWriter para leer lo que se introduce por consola.
 		BufferedWriter bw = null;
 
-		// Me creo una variable ruta que guarde la ruta del fichero.
-		String ruta = new File("datos.txt").getAbsolutePath();
-
 		// Me creo un escáner para escribir cosas desde la consola.
 		Scanner sc = new Scanner(System.in);
 
@@ -50,14 +47,14 @@ public class ejercicio05 {
 		}
 
 		// Creamos un fichero con la ruta que hemos definido al principio.
-		File fichero = new File(ruta);
+		File fichero = new File("src\\Ficheros\\datos.txt");
 
-		// Comprobamos si el fichero yaexiste.
+		// Comprobamos si el fichero ya existe.
 		try {
-			if (fichero.createNewFile()) {
+			if (!fichero.createNewFile()) {
 
 				// Creamos el fichero de escritura y le asignamos la ruta de fichero.
-				bw = new BufferedWriter(new FileWriter(ruta));
+				bw = new BufferedWriter(new FileWriter("src\\Ficheros\\datos.txt"));
 
 				// Recorremos el mapa.
 				for (String nom : gente.keySet()) {
@@ -73,6 +70,8 @@ public class ejercicio05 {
 					bw.newLine();
 				}
 
+				System.out.println("Se ha creado el archivo.");
+				
 				bw.flush();
 
 			} else {
@@ -80,8 +79,7 @@ public class ejercicio05 {
 				// Asignamos la ubicación del fichero y ponemos true, para que se vayan
 				// añadiendo las cosas.
 
-				bw = new BufferedWriter(new FileWriter(
-						"/Users/isabelkatharinaloerzer/git/Tema10_B2/Tema10_B2/src/Ficheros/datos.txt", true));
+				bw = new BufferedWriter(new FileWriter("src\\Ficheros\\datos.txt", true));
 
 				// Recorremos el mapa.
 				for (String nom : gente.keySet()) {
@@ -103,8 +101,9 @@ public class ejercicio05 {
 			}
 
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			
+			System.out.println("Error al crear el archivo");
+			e.getMessage();
 
 		} finally {
 

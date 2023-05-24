@@ -13,7 +13,7 @@ public class Ejercicio01 {
 		
 		//Asignamos la ubicación del fichero.
 		try {
-			sc= new Scanner( new FileReader("/Users/isabelkatharinaloerzer/git/Tema10_B2/Tema10_B2/src/ejercicio01/NumerosReales.txt"));
+			sc= new Scanner( new FileReader("src\\Ficheros\\NumerosReales.txt"));
 			
 			//Creamos las variables necesarias.
 			double suma=0;

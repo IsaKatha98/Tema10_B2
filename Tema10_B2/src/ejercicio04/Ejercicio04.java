@@ -21,7 +21,7 @@ public class Ejercicio04 {
 		// ASignamos la ubicación del fichero.
 
 		try {
-			bw = new BufferedWriter(new FileWriter("/Users/isabelkatharinaloerzer/git/Tema10_B2/Tema10_B2/src/Ficheros/Escribir.txt"));
+			bw = new BufferedWriter(new FileWriter("\\src/Ficheros\\Escribir.txt"));
 			
 			//Creamos las variables necesarias.
 			String texto="";

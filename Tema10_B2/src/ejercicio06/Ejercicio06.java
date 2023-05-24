@@ -22,7 +22,7 @@ public class Ejercicio06 {
 		//Asignamos la ubicación del fichero.
 		
 		try {
-			sc= new Scanner (new FileReader ("/Users/isabelkatharinaloerzer/git/Tema10_B2/Tema10_B2/src/Ficheros/NumDesordenados.txt"));
+			sc= new Scanner (new FileReader ("src\\Ficheros\\NumDesordenados.txt"));
 		
 			//Nos creamos las variables necesarias.
 			int num; //guarda cada número que lea el escáner.
@@ -44,7 +44,7 @@ public class Ejercicio06 {
 			//Ahora, vamos a escribir el TreeSet en el fichero correspondiente.
 			//Asignamos la ubicación del fichero.
 			
-			bw= new BufferedWriter (new FileWriter("/Users/isabelkatharinaloerzer/git/Tema10_B2/Tema10_B2/src/Ficheros/NumOrdenados.txt"));
+			bw= new BufferedWriter (new FileWriter("src\\Ficheros\\NumOrdenados.txt"));
 		
 			String linea;
 			//Recorremos el TreeSet con un for-each.

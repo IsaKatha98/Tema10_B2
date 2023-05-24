@@ -16,7 +16,7 @@ public class Ejercicio03 {
 	
 	//ASignamos la ubicación del fichero.
 	try {
-		br= new BufferedReader(new FileReader("src\\ejercicio03\\Alumnos.txt"));
+		br= new BufferedReader(new FileReader("src\\Ficheros\\Alumnos.txt"));
 	
 	
 		//Creamos las variables necesarias.
